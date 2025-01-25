@@ -1,0 +1,31 @@
+.pokemon-card {
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center content */
+  padding: 1rem; /* Inner spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s; /* Add hover effect */
+  width: 175px; /* Fixed width */
+  height: 200px; /* Fixed height */
+  display: flex; /* Enable flex layout */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Distribute content evenly */
+  align-items: center; /* Center items horizontally */
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+.pokemon-image {
+  width: 150px; /* Set consistent image width */
+  height: 150px; /* Set consistent image height */
+  object-fit: cover; /* Ensure the image doesn't stretch */
+  margin-bottom: 0; /* Add spacing below the image */
+}
+
+.pokemon-name {
+  font-size: 1rem; /* Ensure title fits well */
+  text-transform: capitalize; /* Capitalize Pokémon names */
+  margin: 0; /* Remove extra spacing around title */
+}
