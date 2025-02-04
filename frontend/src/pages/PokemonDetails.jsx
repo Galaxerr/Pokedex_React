@@ -13,11 +13,14 @@ const PokemonDetails = () => {
   if (error) return <div>Error loading Pokémon data.</div>;
 
   return (
-    <div className='pokemon-details'>
-      <h2>Pokémon Details</h2>
-
-      <PokemonCard pokemon={pokemon} />
-      <h3>{pokemon.description}</h3>
+    <div className="pokemon-details-container">
+      <h1>Pokémon Details</h1>
+      <div className="pokemon-details-wrapper">
+        <PokemonCard pokemon={pokemon} />
+        <div className="pokemon-description-box">
+          <h3>{pokemon.description}</h3>
+        </div>
+      </div>
     </div>
   );
 };
