@@ -1,7 +1,7 @@
 node_modules
 dist
-*.local
-coverage
 .env
 .env.*
 !.env.example
+coverage
+*.tsbuildinfo

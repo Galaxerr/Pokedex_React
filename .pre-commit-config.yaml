@@ -1,0 +1,23 @@
+# Configuration only; do not install hooks in M0.
+# Run the equivalent commands in README.md manually.
+repos:
+  - repo: local
+    hooks:
+      - id: backend-ruff
+        name: Backend Ruff
+        entry: uv run --directory backend ruff check .
+        language: system
+        pass_filenames: false
+        files: ^backend/.*\.py$
+      - id: backend-format
+        name: Backend format
+        entry: uv run --directory backend ruff format --check .
+        language: system
+        pass_filenames: false
+        files: ^backend/.*\.py$
+      - id: frontend-format
+        name: Frontend format
+        entry: npm --prefix frontend run format
+        language: system
+        pass_filenames: false
+        files: ^frontend/

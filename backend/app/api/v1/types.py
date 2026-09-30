@@ -1,0 +1,1 @@
+"""Type route placeholder."""

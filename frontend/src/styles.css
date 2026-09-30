@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172033;
+  background: #f7f8fb;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+.scaffold {
+  max-width: 48rem;
+  margin: 20vh auto;
+  padding: 2rem;
+  text-align: center;
+}
+.muted {
+  color: #667085;
+}

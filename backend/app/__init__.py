@@ -1,0 +1,1 @@
+"""Pokedex backend application package."""
