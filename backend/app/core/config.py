@@ -1,12 +1,18 @@
-"""Configuration placeholder for the future runtime settings."""
+"""Typed runtime settings shared by SQLAlchemy and Alembic."""
 
-from pydantic_settings import BaseSettings
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    """Empty settings boundary; domain configuration is deferred."""
+    """Environment-backed settings; values are safe defaults for local development."""
 
-    model_config = {"env_file": ".env", "extra": "ignore"}
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
+    database_url: str = Field(
+        default="postgresql+asyncpg://pokedex:pokedex@localhost:5432/pokedex",
+        validation_alias="DATABASE_URL",
+    )
 
 
 settings = Settings()
