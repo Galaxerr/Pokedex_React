@@ -72,5 +72,16 @@ in `.git`. Eseguire manualmente i comandi Ruff e Prettier sopra elencati.
 ## M0 e prossimi confini
 
 Sono inclusi solo scaffolding, configurazione, containerizzazione, CI e documentazione.
-Non sono inclusi schema dati, migrazioni Alembic, seed da PokéAPI, repository/API
-Pokémon, autenticazione o implementazione delle pagine di dominio.
+M1 aggiunge migrazione e seed da PokéAPI. Il seed è eseguibile solo con PostgreSQL
+16 migrato e non chiama PokéAPI durante le richieste dell’applicazione.
+
+```bash
+cd backend
+export DATABASE_URL=postgresql+asyncpg://pokedex:pokedex@localhost:5434/pokedex
+uv run alembic upgrade head
+uv run python scripts/seed_from_pokeapi.py --database-url "$DATABASE_URL" --cache-dir .cache/pokeapi
+```
+
+Il comando è idempotente: ripete la sostituzione atomica del catalogo e non crea
+duplicati. Per una prova breve usare `--limit 3`; la prova completa e i conteggi
+vanno registrati in `docs/milestones/M1_SEED_EVIDENCE.md`.
